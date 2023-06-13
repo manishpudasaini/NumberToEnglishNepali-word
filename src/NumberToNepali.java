@@ -7,11 +7,15 @@ public class NumberToNepali {
     {
         String numberWordFormat;
 
-        BigInteger n=new BigInteger("1500000300");
+        BigInteger n=new BigInteger("150000030000");
         System.out.println("Number = "+n);
 
         BigInteger divide = null;
         int mod;
+
+        divide = n.divide(new BigInteger("100000000000"));
+        mod = divide.mod(new BigInteger("100")).intValue();
+        String s0 = genWords(mod, " खर्ब");
 
         divide = n.divide(new BigInteger("1000000000"));
         mod = divide.mod(new BigInteger("100")).intValue();
@@ -36,7 +40,7 @@ public class NumberToNepali {
         mod = n.mod(new BigInteger("100")).intValue();
         String s5 = genWords(mod, " ");
 
-        numberWordFormat = s + s1 + s2 + s3 + s4 + s5;
+        numberWordFormat = s0+s + s1 + s2 + s3 + s4 + s5;
 
         System.out.println();
         System.out.println(" Number in string  :: \n" + numberWordFormat);
